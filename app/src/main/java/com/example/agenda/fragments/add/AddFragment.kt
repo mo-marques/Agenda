@@ -7,12 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.agenda.R
-import com.example.agenda.data.User
-import com.example.agenda.data.UserViewModel
+import com.example.agenda.model.User
+import com.example.agenda.viewmodel.UserViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
 
@@ -37,10 +36,10 @@ class AddFragment : Fragment() {
     }
 
     private fun insertDatatoDataBase() {
-        val task = til_title.toString()
-        val description = til_descricao.toString()
-        val date = til_data.toString()
-        val hour = til_hora.toString()
+        val task = til_titulo.editText?.text.toString()
+        val description = til_descricao.editText?.text.toString()
+        val date = til_data.editText?.text.toString()
+        val hour = til_hora.editText?.text.toString()
 
         if (inputCheck(task, description, date, hour)) {
                 //Create User Object

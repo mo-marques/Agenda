@@ -1,15 +1,18 @@
-package com.example.agenda.data
+package com.example.agenda.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.example.agenda.data.UserDataBase
+import com.example.agenda.repository.UserRepository
+import com.example.agenda.model.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class UserViewModel(application: Application): AndroidViewModel(application){
 
-    private val readAllData: LiveData<List<User>>
+    val readAllData: LiveData<List<User>>
     private val repository: UserRepository
 
     init {

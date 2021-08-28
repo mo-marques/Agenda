@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.update.UpDateFragment">
 
-<com.google.android.material.appbar.MaterialToolbar
-    android:id="@+id/toolbar"
-    app:layout_constraintTop_toTopOf="parent"
-    app:title="Criar Tarefa do Dia"
-    app:navigationIcon="@drawable/ic_navigate"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/updateToolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Criar Tarefa do Dia"
+        app:navigationIcon="@drawable/ic_navigate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guide_start"
+        android:id="@+id/guide_updateStart"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="32dp"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guide_end"
+        android:id="@+id/guide_updateEnd"
         android:orientation="vertical"
         app:layout_constraintGuide_end="32dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_titulo"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintStart_toStartOf="@id/guide_start"
-        app:layout_constraintEnd_toEndOf="@id/guide_end"
+        android:id="@+id/til_updateTitulo"
+        app:layout_constraintTop_toBottomOf="@id/updateToolbar"
+        app:layout_constraintStart_toStartOf="@id/guide_updateStart"
+        app:layout_constraintEnd_toEndOf="@id/guide_updateEnd"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="Título"
         android:layout_marginTop="16dp"
@@ -46,13 +48,13 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_descricao"
-        app:layout_constraintTop_toBottomOf="@id/til_titulo"
-        app:layout_constraintStart_toStartOf="@id/guide_start"
+        android:id="@+id/til_updateDescricao"
+        app:layout_constraintTop_toBottomOf="@id/til_updateTitulo"
+        app:layout_constraintStart_toStartOf="@id/guide_updateStart"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="Descrição"
         android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="@id/guide_end"
+        app:layout_constraintEnd_toEndOf="@id/guide_updateEnd"
         android:layout_width="0dp"
         android:layout_height="wrap_content">
 
@@ -64,10 +66,10 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_data"
-        app:layout_constraintTop_toBottomOf="@id/til_descricao"
-        app:layout_constraintStart_toStartOf="@id/guide_start"
-        app:layout_constraintEnd_toStartOf="@id/til_hora"
+        android:id="@+id/til_updateData"
+        app:layout_constraintTop_toBottomOf="@id/til_updateDescricao"
+        app:layout_constraintStart_toStartOf="@id/guide_updateStart"
+        app:layout_constraintEnd_toStartOf="@id/til_updateHora"
         android:layout_marginEnd="16dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="Data"
@@ -85,12 +87,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_hora"
+        android:id="@+id/til_updateHora"
         android:hint="Hora"
         app:startIconDrawable="@drawable/ic_timer"
-        app:layout_constraintTop_toTopOf="@id/til_data"
-        app:layout_constraintStart_toEndOf="@id/til_data"
-        app:layout_constraintEnd_toEndOf="@id/guide_end"
+        app:layout_constraintTop_toTopOf="@id/til_updateData"
+        app:layout_constraintStart_toEndOf="@id/til_updateData"
+        app:layout_constraintEnd_toEndOf="@id/guide_updateEnd"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content">
@@ -104,27 +106,27 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_cancelar"
+        android:id="@+id/btn_updateCancelar"
         android:text="Cancelar"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@id/btn_criar"
-        app:layout_constraintStart_toStartOf="@id/guide_start"
-        app:layout_constraintEnd_toEndOf="@id/guide_end"
+        app:layout_constraintBottom_toTopOf="@id/btn_updateCriar"
+        app:layout_constraintStart_toStartOf="@id/guide_updateStart"
+        app:layout_constraintEnd_toEndOf="@id/guide_updateEnd"
         android:layout_width="0dp"
         android:layout_height="wrap_content"/>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_criar"
+        android:id="@+id/btn_updateCriar"
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="112dp"
-        android:text="Criar Tarefa"
+        android:layout_marginBottom="132dp"
+        android:text="Atualizar "
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/guide_end"
+        app:layout_constraintEnd_toEndOf="@id/guide_updateEnd"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/guide_start" />
+        app:layout_constraintStart_toStartOf="@id/guide_updateStart" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

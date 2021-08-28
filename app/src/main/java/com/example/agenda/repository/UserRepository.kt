@@ -1,6 +1,8 @@
-package com.example.agenda.data
+package com.example.agenda.repository
 
 import androidx.lifecycle.LiveData
+import com.example.agenda.data.UserDao
+import com.example.agenda.model.User
 
 class UserRepository(private val userDao: UserDao) {
 
